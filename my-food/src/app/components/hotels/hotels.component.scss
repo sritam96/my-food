@@ -1,0 +1,62 @@
+.hotel-container {
+  background: wheat;
+  .menu-bar {
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .tagline {
+      font-size: 27px;
+      padding-left: 1%;
+      text-transform: uppercase;
+    }
+    .filters {
+      padding: 1%;
+      app-search-bar {
+        margin-right: 35px;
+      }
+    }
+  }
+  .hotel-cards {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    padding: 1%;
+    box-sizing: border-box;
+    .hotel {
+      display: flex;
+      flex-basis: 25%;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+  }
+  .empty-search {
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+  }
+}
+
+h3 {
+  margin: 0;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+  .menu-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .tagline {
+      font-size: 20px;
+    }
+    .filters {
+      display: flex;
+    }
+  }
+
+  .hotel-cards {
+    flex-direction: column;
+  }
+}

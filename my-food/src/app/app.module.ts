@@ -1,35 +1,50 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
-  HeaderComponent,
-  NewsComponent,
-  NewsItemComponent,
+  CartItemComponent,
+  DropdownComponent,
+  HotelCardComponent,
+  HotelComponent,
+  HotelsComponent,
+  MenuItemComponent,
+  SearchBarComponent,
 } from './components';
-import { NewsService } from './services';
-import { MatExpansionModule } from '@angular/material/expansion';
-import { MatChipsModule } from '@angular/material/chips';
+import { FoodService } from './services';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatCardModule } from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
 import { EffectsModule } from '@ngrx/effects';
-import { NewsEffects, NEWS_FEATURE, newsReducer } from './state';
+import { FoodEffects, FOOD_FEATURE, foodReducer } from './state';
 import { StoreModule } from '@ngrx/store';
-
-export const effectModuleForFeature = EffectsModule.forRoot([NewsEffects]);
+import {MatPaginatorModule} from '@angular/material/paginator'
+import {MatTableModule} from '@angular/material/table';
+export const effectModuleForFeature = EffectsModule.forRoot([FoodEffects]);
 export const storeModuleForFeature = StoreModule.forFeature(
-  NEWS_FEATURE,
-  newsReducer
+  FOOD_FEATURE,
+  foodReducer
 );
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    NewsComponent,
-    NewsItemComponent,
+    HotelsComponent,
+    HotelCardComponent,
+    HotelComponent,
+    DropdownComponent,
+    CartItemComponent,
+    MenuItemComponent,
+    SearchBarComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -37,13 +52,22 @@ export const storeModuleForFeature = StoreModule.forFeature(
     BrowserAnimationsModule,
     effectModuleForFeature,
     FormsModule,
+    MatPaginatorModule,
     HttpClientModule,
-    MatChipsModule,
-    MatExpansionModule,
+    MatCardModule,
+    MatButtonModule,
+    MatSelectModule,
+    MatIconModule,
+    MatInputModule,
+    MatDividerModule,
+    MatTableModule,
+    MatSidenavModule,
+    MatBadgeModule,
+    MatProgressSpinnerModule,
     StoreModule.forRoot({}),
     storeModuleForFeature,
   ],
-  providers: [NewsService],
+  providers: [FoodService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

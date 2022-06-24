@@ -1,2 +1,4 @@
-export * from './news.model'
-export * from './select.model'
+export * from './hotel.model'
+export * from './menu.model'
+export * from './sort.model'
+export * from './cart.model'

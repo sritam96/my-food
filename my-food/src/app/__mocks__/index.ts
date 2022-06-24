@@ -1,1 +1,1 @@
-export * from './news.mock';
+export * from './food.mock';

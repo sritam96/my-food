@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { NewsComponent } from './components';
+import { Routes, RouterModule } from '@angular/router';
+import { HotelsComponent, HotelComponent } from './components';
 
 const routes: Routes = [
-  { path: 'news', component: NewsComponent },
-  { path: '**', redirectTo: 'news' },
+  { path: '', redirectTo: '/hotels', pathMatch: 'full' },
+  { path: 'hotels', component: HotelsComponent },
+  { path: 'hotels/:id', component: HotelComponent },
+  { path: '**', redirectTo: '/hotels' },
 ];
 
 @NgModule({

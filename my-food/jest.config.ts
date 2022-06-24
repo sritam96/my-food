@@ -1,5 +1,5 @@
 module.exports = {
-  displayName: 'news',
+  displayName: 'food',
   preset: './jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test.ts'],
   globals: {
@@ -8,7 +8,7 @@ module.exports = {
       stringifyContentPathRegex: '\\.(html|svg)$'
     }
   },
-  coverageDirectory: '../../coverage/src/news',
+  coverageDirectory: '../../coverage/src/food',
   coverageReporters: ['text', 'html'],
   coverageThreshold: {
     global: {
